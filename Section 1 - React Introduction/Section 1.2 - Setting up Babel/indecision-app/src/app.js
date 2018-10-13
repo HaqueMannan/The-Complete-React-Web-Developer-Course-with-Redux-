@@ -1,15 +1,7 @@
 console.log('App.js is running!');
 
 // JSX - JavaScript XML code. This syntax/code is not understood by browsers.
-// var template = <h1 id="someid">Hello React</h1>;
-
-
-//JavaScript ES2015 syntax of our JSX code above which is understood by all browsers.
-var template = React.createElement(
-   "h1",
-   { id: "someid" },
-   "Hello React"
-);
+var template = <h1 id="someid">Hello React</h1>;
 
 //Regular JavaScript to get an element by an id and assign it to a variable we can use.
 var appRoot = document.getElementById('app');
