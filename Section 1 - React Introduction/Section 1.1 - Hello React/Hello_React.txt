@@ -1,0 +1,23 @@
+---------------------------
+HELLO REACT
+---------------------------
+- This is a demonstration of React JSX.
+- We have a simple index.html file. 
+- We are using <script> tags to bring in the React library from a CDN, however, later we will learn to bring in the React libraries/dependencies using Webpack. However, for now we need the React library to create our rendered component.
+- We have a single <div> element with the id of app. We are also going to bring in our JavaScript code from our app.js file using the <scripts> tag.
+
+- We have now have a scripts folder which holds our app.js file. In this file we have written our first JSX syntax:
+
+   var template = <h1 id="someid">Hello React</h1>
+
+- The JSX syntax is not recognised by the browser and the application will not work. All browsers support ES2015 code. The ES2015 syntax for the JSX code above is:
+
+   var template = React.createElement(
+      "h1",
+      { id: "someid" },
+      "Hello React"
+   );
+
+- We will use something called Babel to compile our JSX code into regular ES2015 code. 
+- Babel allows us to use JSX, ES6 and ES7 coding features within our project files, and it will compile these codes into regular ES2015 (ES5) JavaScript which the browser understands.
+- We would want to compile to ES2015 code because not all browser supports the newer ES6, ES7 syntax, this also allows your application to work on older browsers.
