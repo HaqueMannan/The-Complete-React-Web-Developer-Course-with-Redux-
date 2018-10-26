@@ -1,0 +1,28 @@
+//--------------------------------
+// Challenge:
+//--------------------------------
+// Build the Visibility Toggle App again using the React Component and State.
+// VisibilityToggle Component -> render, constructor, handleToggleVisibility methods
+// visibility -> false
+
+
+// Previous ES6 Arrow function code to update:
+let visibility = false;
+
+const toggleVisibility = (e) => {
+   visibility = !visibility;
+   renderApp();
+};
+
+const renderApp = () => {
+   const visibilityApp = (
+      <div>
+         <h1>Visibility Toggle</h1>
+         <button onClick={toggleVisibility}>{visibility ? 'Hide Details' : 'Show Details'}</button>
+         {visibility && <p>Hey. These are some details you can now see!</p>}
+      </div>
+   );
+   ReactDOM.render(visibilityApp, document.getElementById('app'));
+};
+
+renderApp();
