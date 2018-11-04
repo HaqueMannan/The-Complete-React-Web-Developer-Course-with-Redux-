@@ -1,0 +1,25 @@
+{
+   "name": "indecision-app",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "author": "Abdul-Haque",
+   "license": "MIT",
+   "scripts": {
+      "serve": "live-server public/",
+      "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env, react --watch",
+      "build": "webpack --watch"
+   },
+   "dependencies": {
+      "babel-cli": "^6.24.1",
+      "babel-core": "^6.25.0",
+      "babel-loader": "^7.1.1",
+      "babel-preset-env": "^1.5.2",
+      "babel-preset-react": "^6.24.1",
+      "live-server": "^1.2.0",
+      "react": "^16.0.0",
+      "react-dom": "^16.0.0",
+      "validator": "^10.8.0",
+      "webpack": "^3.1.0"
+   }
+}
