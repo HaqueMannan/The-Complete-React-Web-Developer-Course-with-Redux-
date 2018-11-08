@@ -1,0 +1,10 @@
+// 1 rem = 16px
+// To make it easier to work with rem units if we use 62.5% i.e. 16 * 0.625 = 10px - 1.6rem is 16px, 2.2rem is 22px and so on:
+html {
+   font-size: 62.5%
+}
+
+body {
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 1.6rem;
+}
