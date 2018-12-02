@@ -1,0 +1,10 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# webpack generated files
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
