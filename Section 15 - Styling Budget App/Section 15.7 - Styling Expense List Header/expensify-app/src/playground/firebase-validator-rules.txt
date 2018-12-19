@@ -1,0 +1,49 @@
+In Firebase, we can setup rules for reading and writing to the database. We can setup server side validations along with client side validations in order to make reading and writing to the database secure and prevent users from messing up the database.
+
+Below is the Firebase rules used for server side validation:
+
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid",
+        "expenses": {
+          "$expense": {
+            ".validate": "newData.hasChildren(['description', 'note', 'amount', 'createdAt'])",
+            "description": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+          	"note": {
+              ".validate": "newData.isString()"
+            },
+            "amount": {
+              ".validate": "newData.isNumber()"
+            },
+            "createdAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+          		".validate": false
+        		}
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
+
+Firebase also has a simulator to simulate the above rules to see what will pass or fail when we make read and write request to the server.
+
+You can learn more about how to setup rules within the Firebase docs:
+https://firebase.google.com/docs/database/security/
+
+
+Important Note: if you have deployed your application to a web server such as Heroku, you will need to add the web domain to the Firebase Authorised domains. To do this log into Firebase and within your project navigate to: 
+Authentication > Sign-in method
+Scroll down to Authorised domain and click on Add domain. Add your web domain that your application is hosted at. This will now enable your web application to read and write to the firebase database. You will notice localhost is already added by default which is why we could read and write locally to the firebase database.
