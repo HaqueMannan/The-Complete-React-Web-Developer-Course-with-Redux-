@@ -1,0 +1,10 @@
+Some Useful Terminal Commands for Projects:
+
+npm run dev-server;           --> Runs Dev Server on port localhost:8080
+npm test                      --> Runs Jest test suite once
+npm test -- --watch           --> Runs Jest test suite and watches for changes to rerun
+npm run build:dev             --> Build public dev files
+npm run build:prod            --> Builds public build files
+npm start                     --> Starts downloading all node_modules specified in the package.json
+node server/server.js         --> runs server file.
+git push heroku master        --> push local master branch up to the heroku web servers.
